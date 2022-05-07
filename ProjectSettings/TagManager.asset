@@ -4,13 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ammo
-  - Bullet
   - Health
   - SkyboxCamera
-  - TrackingObject
   - Actors
   - Planet
+  - ally_mothership
+  - ally_spawner
+  - ally_fighter
+  - enemy_spawner
+  - enemy_fighter
   layers:
   - Default
   - TransparentFX

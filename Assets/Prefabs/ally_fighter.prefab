@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7374850548700909814}
   m_Layer: 0
   m_Name: ally_fighter
-  m_TagString: Untagged
+  m_TagString: ally_fighter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

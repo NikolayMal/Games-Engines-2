@@ -4,26 +4,33 @@ using UnityEngine;
 
 public class ally_mothership : MonoBehaviour
 {
-    public GameObject mothership;
+    public GameObject ally_spawnership;
     private GameObject target;
     public float speed = 5f;
+    private int check1 = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
-        // Set target to an object with tag 'planet'
-        target = GameObject.FindWithTag("Planet");
-        // Debug.Log(target.transform.position);   
+        target = GameObject.FindWithTag("Planet");  
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Move towards the target
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-        // Rotate to face the target
         transform.LookAt(target.transform);
+
+        if (Vector3.Distance(transform.position, target.transform.position) < 900)
+        {
+            if( check1 == 0) {
+                for (int i = 0; i < 10; i++)
+                {
+                    Vector3 spawnPosition = new Vector3(transform.position.x + Random.Range(-100, 100), transform.position.y + Random.Range(-100, 100), transform.position.z);
+                    Quaternion spawnRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+                    Instantiate(ally_spawnership, spawnPosition, transform.rotation);
+                }
+                check1 = 1;
+            }
+        }
         
     }
 }

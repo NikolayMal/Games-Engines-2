@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135876f19125324429730dea19164bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mothership: {fileID: 5702363394798093977, guid: 3365b601d2f617b4186f9bb1ee440de1, type: 3}
+  ally_mothership: {fileID: 5702363394798093977, guid: 3365b601d2f617b4186f9bb1ee440de1, type: 3}
   planet: {fileID: 7919319199253435486, guid: c7f7db965a1687447839f1cf68261c1b, type: 3}
 --- !u!4 &1645004887
 Transform:

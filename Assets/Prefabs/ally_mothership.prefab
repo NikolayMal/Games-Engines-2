@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4727453207108558188}
   m_Layer: 0
   m_Name: ally_mothership
-  m_TagString: Untagged
+  m_TagString: ally_mothership
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dae61a28ab35004aa2b2b6b4f462657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mothership: {fileID: 0}
-  target: {fileID: 0}
+  ally_spawnership: {fileID: 3205228914758645135, guid: 45ddc6d007f07c7468f4fd0aae44fc6c, type: 3}
   speed: 50
 --- !u!1 &5702363394798130711
 GameObject:
