@@ -13,6 +13,7 @@ TagManager:
   - ally_fighter
   - enemy_spawner
   - enemy_fighter
+  - ally_cylinder
   layers:
   - Default
   - TransparentFX

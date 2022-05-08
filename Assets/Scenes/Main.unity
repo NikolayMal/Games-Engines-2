@@ -158,7 +158,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -293,7 +293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16, y: 469, z: -491}
+  m_LocalPosition: {x: -18.3, y: 470.3, z: -496.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135876f19125324429730dea19164bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ally_mothership: {fileID: 5702363394798093977, guid: 3365b601d2f617b4186f9bb1ee440de1, type: 3}
+  ally_mothership: {fileID: 8574699399963768000, guid: 3365b601d2f617b4186f9bb1ee440de1, type: 3}
   planet: {fileID: 7919319199253435486, guid: c7f7db965a1687447839f1cf68261c1b, type: 3}
 --- !u!4 &1645004887
 Transform:

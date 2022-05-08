@@ -53,7 +53,7 @@ public class ally_spawnership : MonoBehaviour
         // int count = GameObject.FindGameObjectsWithTag("ally_fighter").Length;
         // Count children of ally_spawnership
         int count = transform.childCount;
-        if(count < 6) {
+        if(count < 30) {
             // Spawn fighter under the ally_spawnership
             Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y - 20, transform.position.z);
             // Quaternion spawnRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);

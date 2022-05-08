@@ -12,6 +12,14 @@ public class ally_mothership : MonoBehaviour
     void Start()
     {
         target = GameObject.FindWithTag("Planet");
+
+        GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+        cylinder.transform.position = transform.position + transform.forward * 50;
+        cylinder.transform.Rotate(new Vector3(0, 90, 90));
+        cylinder.transform.localScale = new Vector3(10, 50, 25);
+        cylinder.transform.parent = transform;
+        cylinder.GetComponent<Renderer>().enabled = false;
+        cylinder.tag = "ally_cylinder";
     }
 
     void Update()
