@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class Constrain: SteeringBehaviour
 {
-    public float radius = 20.0f;
+    private GameObject ally_mothership;
+    public float radius = 100.0f;
 
     public Vector3 center;
 
@@ -21,7 +22,8 @@ public class Constrain: SteeringBehaviour
 
     public void Start()
     {
-            center = transform.position;
+        ally_mothership = GameObject.FindWithTag("ally_mothership");
+        center = ally_mothership.transform.position;
     }
 
     public override Vector3 Calculate()

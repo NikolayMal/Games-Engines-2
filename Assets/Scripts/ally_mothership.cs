@@ -11,7 +11,7 @@ public class ally_mothership : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.FindWithTag("Planet");  
+        target = GameObject.FindWithTag("Planet");
     }
 
     void Update()
@@ -25,11 +25,14 @@ public class ally_mothership : MonoBehaviour
                 for (int i = 0; i < 10; i++)
                 {
                     Vector3 spawnPosition = new Vector3(transform.position.x + Random.Range(-100, 100), transform.position.y + Random.Range(-100, 100), transform.position.z);
-                    Quaternion spawnRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
-                    Instantiate(ally_spawnership, spawnPosition, transform.rotation);
+                    // Quaternion spawnRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+                    GameObject spawnership = Instantiate(ally_spawnership, spawnPosition, transform.rotation) as GameObject;
                 }
                 check1 = 1;
             }
+            
+            // Stop the movement of the mothership
+            speed = 0;
         }
         
     }

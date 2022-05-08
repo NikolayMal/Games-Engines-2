@@ -7,6 +7,7 @@ public class ally_fighter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Invoke("circle", 5.0f);
         
     }
 
@@ -14,5 +15,13 @@ public class ally_fighter : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void circle()
+    {
+        // disable script on ally_fighter
+        gameObject.GetComponent<Boid>().enabled = false;
+        gameObject.AddComponent<circle_mothership>();
+
     }
 }
