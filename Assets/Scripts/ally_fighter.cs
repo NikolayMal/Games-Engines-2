@@ -8,6 +8,9 @@ public class ally_fighter : MonoBehaviour
     void Start()
     {
         Invoke("circle", 5.0f);
+
+        // Stop the movement of the fighter using transform
+        transform.position = Vector3.MoveTowards(transform.position, transform.position, Time.deltaTime * 0);
         
     }
 

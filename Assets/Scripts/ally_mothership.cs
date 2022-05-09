@@ -20,13 +20,13 @@ public class ally_mothership : MonoBehaviour
         cylinder.transform.parent = transform;
         cylinder.GetComponent<Renderer>().enabled = false;
         cylinder.tag = "ally_cylinder";
+
+        gameObject.AddComponent<ally_mothership_move>();
     }
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-        transform.LookAt(target.transform);
-
+        Debug.Log(Vector3.Distance(transform.position, target.transform.position));
         if (Vector3.Distance(transform.position, target.transform.position) < 900)
         {
             if( check1 == 0) {
@@ -40,7 +40,7 @@ public class ally_mothership : MonoBehaviour
             }
             
             // Stop the movement of the mothership
-            speed = 0;
+            gameObject.GetComponent<ally_mothership_move>().enabled = false;
         }
         
     }
