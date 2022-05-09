@@ -7,6 +7,8 @@ public class enemy_fighter : MonoBehaviour
     public GameObject[] targets;
     public int random_target;
     public GameObject enemy_fighter_laser;
+
+    public int Health = 100;
     // Start is called before the first frame update
     void Start()
     {  
@@ -23,6 +25,12 @@ public class enemy_fighter : MonoBehaviour
             {
                transform.Translate(Vector3.forward * Time.deltaTime * 10);
             }
+        }
+
+        if (Health == 0)
+        {
+            Debug.Log("Ally Spawner Destroyed!");
+            Destroy(gameObject);
         }
     }
 

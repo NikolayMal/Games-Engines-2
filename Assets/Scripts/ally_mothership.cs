@@ -8,6 +8,7 @@ public class ally_mothership : MonoBehaviour
     private GameObject target;
     public float speed = 5f;
     private int check1 = 0;
+    public int Health = 10000;
 
     void Start()
     {
@@ -40,6 +41,12 @@ public class ally_mothership : MonoBehaviour
             
             // Stop the movement of the mothership
             gameObject.GetComponent<ally_mothership_move>().enabled = false;
+        }
+
+        if (Health == 0)
+        {
+            Debug.Log("Ally Spawner Destroyed!");
+            Destroy(gameObject);
         }
         
     }

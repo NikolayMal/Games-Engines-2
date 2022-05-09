@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ally_fighter : MonoBehaviour
 {
+    public int Health = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,11 @@ public class ally_fighter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Health == 0)
+        {
+            Debug.Log("Ally Spawner Destroyed!");
+            Destroy(gameObject);
+        }
     }
 
     void circle()

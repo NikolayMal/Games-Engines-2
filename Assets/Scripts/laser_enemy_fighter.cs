@@ -33,15 +33,17 @@ public class laser_enemy_fighter : MonoBehaviour
         if ( other.gameObject.tag == "ally_cylinder")
         {
             Debug.Log("hit ally mothership");
-            
+            other.gameObject.GetComponent<ally_mothership>().Health -= damage;            
         }
         if (other.gameObject.tag == "ally_fighter")
         {
             Debug.Log("hit ally fighter");
+            other.gameObject.GetComponent<ally_fighter>().Health -= damage;
         }
         if(other.gameObject.tag == "enemy_fighter")
         {
             Debug.Log("friendly fire!");
+            other.gameObject.GetComponent<enemy_fighter>().Health -= damage;
         }
 
 
