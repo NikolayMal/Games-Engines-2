@@ -293,7 +293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.3, y: 470.3, z: -496.1}
+  m_LocalPosition: {x: -18.3, y: 0, z: -496.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -330,6 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ally_mothership: {fileID: 8574699399963768000, guid: 3365b601d2f617b4186f9bb1ee440de1, type: 3}
   planet: {fileID: 7919319199253435486, guid: c7f7db965a1687447839f1cf68261c1b, type: 3}
+  enemy_spawnership: {fileID: 1366741091205099712, guid: 8b5edfa88393d5a4ea05c93c723f6de6, type: 3}
 --- !u!4 &1645004887
 Transform:
   m_ObjectHideFlags: 0
