@@ -106,7 +106,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299899059371532420}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -145.13254, y: 834.8055, z: 95.26192}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
@@ -114,7 +114,7 @@ Transform:
   - {fileID: 5020527460998852138}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &7357678539006130302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: []
   random_target: 0
+  enemy_fighter_laser: {fileID: 1129071031353249627, guid: 5fc9442b2fb5fff46a1ebd72adee95a9, type: 3}
 --- !u!1 &7111885204973703664
 GameObject:
   m_ObjectHideFlags: 0

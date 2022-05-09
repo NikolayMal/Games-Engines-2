@@ -6,10 +6,12 @@ public class enemy_fighter : MonoBehaviour
 {
     public GameObject[] targets;
     public int random_target;
+    public GameObject enemy_fighter_laser;
     // Start is called before the first frame update
     void Start()
     {  
        InvokeRepeating("find_targets", 1.0f, 20.0f);
+       InvokeRepeating("fire_laser", 1.0f, 5.0f);
     }
 
     // Update is called once per frame
@@ -17,7 +19,10 @@ public class enemy_fighter : MonoBehaviour
     {
         if (targets.Length > 0)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * 10);
+            if (Vector3.Distance(transform.position, targets[random_target].transform.position) > 40)
+            {
+               transform.Translate(Vector3.forward * Time.deltaTime * 10);
+            }
         }
     }
 
@@ -34,5 +39,13 @@ public class enemy_fighter : MonoBehaviour
         int random_target = Random.Range(0, targets.Length - 1);
         Debug.Log(random_target);
         transform.LookAt(targets[random_target].transform);
+    }
+
+    void fire_laser()
+    {
+        // instantiate a laser and send it to target, rotate lazer 90degrees
+        GameObject laser = Instantiate(enemy_fighter_laser, transform.position, transform.rotation);
+        // parent to fighter
+        laser.transform.parent = gameObject.transform;
     }
 }

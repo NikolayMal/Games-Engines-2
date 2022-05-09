@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 8604233374633462892}
   - component: {fileID: 3595957136124646740}
   - component: {fileID: 4243755382866364373}
+  - component: {fileID: -8010195476384411620}
   m_Layer: 0
   m_Name: ally_fighter
   m_TagString: ally_fighter
@@ -126,3 +127,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468996b1f25c70b4ca4ac3977aa0bec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &-8010195476384411620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7858035199618752531}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.435201, y: 7.477126, z: 19.8232}
+  m_Center: {x: 0, y: 0, z: 0}

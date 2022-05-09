@@ -7,6 +7,8 @@ public class enemy_spawner : MonoBehaviour
     private GameObject ally_mothership;
     public GameObject enemy_fighter;
 
+    public int Health = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,12 @@ public class enemy_spawner : MonoBehaviour
         if (Vector3.Distance(transform.position, ally_mothership.transform.position) > 200)
         {
             transform.position = Vector3.MoveTowards(transform.position, ally_mothership.transform.position, Time.deltaTime * 100);
+        }
+
+        if (Health == 0)
+        {
+            Debug.Log("Ally Spawner Destroyed!");
+            Destroy(gameObject);
         }
         
     }
