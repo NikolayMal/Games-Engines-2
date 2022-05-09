@@ -26,8 +26,7 @@ public class ally_mothership : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Vector3.Distance(transform.position, target.transform.position));
-        if (Vector3.Distance(transform.position, target.transform.position) < 900)
+         if (Vector3.Distance(transform.position, target.transform.position) < 900)
         {
             if( check1 == 0) {
                 for (int i = 0; i < 10; i++)

@@ -45,17 +45,9 @@ public class NoiseWanderV : SteeringBehaviour
         Vector3 rot = transform.rotation.eulerAngles;
 
         rot.x = 0;
-        if (axis == Axis.Horizontal)
-        {
-            target.x = Mathf.Sin(angle);
-            target.z = Mathf.Cos(angle);
-            rot.z = 0;
-        }
-        else
-        {
-            target.y = Mathf.Sin(angle);
-            target.z = Mathf.Cos(angle);
-        }
+        target.y = Mathf.Sin(angle);
+        target.z = Mathf.Cos(angle);
+
         target *= radius;
 
         Vector3 localtarget = target + Vector3.forward * distance;
