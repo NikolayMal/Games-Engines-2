@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class laser_enemy_fighter : MonoBehaviour
 {
+    private int damage = 10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +24,27 @@ public class laser_enemy_fighter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hit something...");
-        Debug.Log(other.gameObject.tag);
-        if (other.gameObject.tag == "ally_fighter")
+        Debug.Log("Hit something..." + other.gameObject.tag);
+        if (other.gameObject.tag == "ally_spawner")
         {
             Debug.Log("hit ally spawner");
-            Destroy(gameObject);
+            other.gameObject.GetComponent<ally_spawnership>().Health -= damage;
         }
+        if ( other.gameObject.tag == "ally_cylinder")
+        {
+            Debug.Log("hit ally mothership");
+            
+        }
+        if (other.gameObject.tag == "ally_fighter")
+        {
+            Debug.Log("hit ally fighter");
+        }
+        if(other.gameObject.tag == "enemy_fighter")
+        {
+            Debug.Log("friendly fire!");
+        }
+
+
+    Destroy(gameObject);
     }
 }

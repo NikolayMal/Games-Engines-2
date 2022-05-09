@@ -7,17 +7,10 @@ public class ally_spawnership : MonoBehaviour
     public float speed = 50f;
     private float distance;
     private GameObject ally_mothership;
-    private GameObject ally_spawner;
-    private GameObject closest_ally_spawner;
     public GameObject ally_fighter;
-    Vector3 targetPos;
     Vector3 worldTarget;
-    Vector3 worldTarget2;
     Vector3 offset;
-    Vector3 offset2;
-    // Make a game object for [] spawners
-    private GameObject[] spawners;
-    public enum Axis { Horizontal, Vertical };
+    public int Health = 100;
 
 
     // private IEnumerator coroutine;
@@ -44,6 +37,12 @@ public class ally_spawnership : MonoBehaviour
             Debug.Log("Moving away from mothership");
             worldTarget = ally_mothership.transform.TransformPoint(offset);
             transform.position = Vector3.MoveTowards(transform.position, worldTarget, speed * Time.deltaTime);
+        }
+        
+        if (Health == 0)
+        {
+            Debug.Log("Ally Spawner Destroyed!");
+            Destroy(gameObject);
         }
     }
 
