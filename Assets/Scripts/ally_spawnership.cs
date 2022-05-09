@@ -23,7 +23,7 @@ public class ally_spawnership : MonoBehaviour
     // private IEnumerator coroutine;
 
     public void OnEnable() {
-        InvokeRepeating("Fighter", 2.0f, 3.0f);
+        InvokeRepeating("Fighter", 2.0f, 1.0f);
     }
 
     void Start()
