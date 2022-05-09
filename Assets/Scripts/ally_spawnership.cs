@@ -38,8 +38,8 @@ public class ally_spawnership : MonoBehaviour
             worldTarget = ally_mothership.transform.TransformPoint(offset);
             transform.position = Vector3.MoveTowards(transform.position, worldTarget, speed * Time.deltaTime);
         }
-        
-        if (Health == 0)
+
+        if (Health <= 0)
         {
             Debug.Log("Ally Spawner Destroyed!");
             Destroy(gameObject);

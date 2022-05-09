@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class laser_enemy_fighter : MonoBehaviour
+public class laser_ally_fighter : MonoBehaviour
 {
     private int damage = 10;
 
@@ -24,18 +24,14 @@ public class laser_enemy_fighter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "ally_spawner")
+        if (other.gameObject.tag == "enemy_spawner")
         {
             other.gameObject.GetComponent<ally_spawnership>().Health -= damage;
-        }
-        if (other.gameObject.tag == "ally_fighter")
-        {
-            other.gameObject.GetComponent<ally_fighter>().Health -= damage;
         }
         if(other.gameObject.tag == "enemy_fighter")
         {
             other.gameObject.GetComponent<enemy_fighter>().Health -= damage;
-        }
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }        
     }
 }

@@ -101,9 +101,9 @@ MonoBehaviour:
   m_doNotOverwriteTemplateMaterialProperties: 0
   m_startPos: {x: 0, y: 100, z: 0}
   m_endPos: {x: 0, y: 0, z: 0}
-  m_lineColor: {r: 0.5943396, g: 0.047659315, b: 0.064958915, a: 1}
-  m_lineWidth: 20
-  m_lightSaberFactor: 0.8
+  m_lineColor: {r: 0.8018868, g: 0.03404235, b: 0.06146526, a: 1}
+  m_lineWidth: 22
+  m_lightSaberFactor: 0.819
 --- !u!114 &1451883535261441353
 MonoBehaviour:
   m_ObjectHideFlags: 0

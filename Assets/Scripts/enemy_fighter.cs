@@ -8,7 +8,7 @@ public class enemy_fighter : MonoBehaviour
     public int random_target;
     public GameObject enemy_fighter_laser;
 
-    public int Health = 100;
+    public int Health = 10;
     // Start is called before the first frame update
     void Start()
     {  
@@ -23,37 +23,35 @@ public class enemy_fighter : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, targets[random_target].transform.position) > 40)
             {
-               transform.Translate(Vector3.forward * Time.deltaTime * 10);
+               transform.Translate(Vector3.forward * Time.deltaTime * 50);
             }
         }
 
-        if (Health == 0)
+        if (Health <= 0)
         {
-            Debug.Log("Ally Spawner Destroyed!");
+            Debug.Log("Enemy fighter Destroyed!");
             Destroy(gameObject);
         }
     }
 
     void find_targets()
     {
-        // find all targets with tag enemy_spawner
-
         targets = GameObject.FindGameObjectsWithTag("ally_spawner");
-        // if targets.leength is null
 
         if (targets.Length == 0) {
             targets = GameObject.FindGameObjectsWithTag("ally_fighter");
         }
-        int random_target = Random.Range(0, targets.Length - 1);
+        random_target = Random.Range(0, targets.Length - 1);
         Debug.Log(random_target);
         transform.LookAt(targets[random_target].transform);
     }
 
     void fire_laser()
     {
-        // instantiate a laser and send it to target, rotate lazer 90degrees
-        GameObject laser = Instantiate(enemy_fighter_laser, transform.position, transform.rotation);
-        // parent to fighter
-        laser.transform.parent = gameObject.transform;
+        if (targets.Length > 0)
+        {
+            GameObject laser = Instantiate(enemy_fighter_laser, transform.position , transform.rotation);
+            laser.transform.parent = gameObject.transform;
+        }
     }
 }

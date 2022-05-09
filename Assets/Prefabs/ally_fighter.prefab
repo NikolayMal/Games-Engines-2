@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 4243755382866364373}
   - component: {fileID: -4278754989525620283}
   - component: {fileID: -1353445032182375176}
+  - component: {fileID: -2910928293633393432}
   m_Layer: 0
   m_Name: ally_fighter
   m_TagString: ally_fighter
@@ -128,6 +129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468996b1f25c70b4ca4ac3977aa0bec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ally_fighter_laser: {fileID: 5339165108406585377, guid: 1a18f091a4e93d4479e91f30a650d095, type: 3}
+  Health: 100
+  targets: []
+  random_target: 0
 --- !u!54 &-4278754989525620283
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,3 +162,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15.435201, y: 7.477126, z: 19.8232}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2910928293633393432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7858035199618752531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d617b343a871fde47b4e28ccc21ce715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

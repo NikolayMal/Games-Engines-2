@@ -43,7 +43,7 @@ public class ally_mothership : MonoBehaviour
             gameObject.GetComponent<ally_mothership_move>().enabled = false;
         }
 
-        if (Health == 0)
+        if (Health <= 0)
         {
             Debug.Log("Ally Spawner Destroyed!");
             Destroy(gameObject);
