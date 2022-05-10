@@ -33,7 +33,7 @@ public class ally_fighter : MonoBehaviour
 
     public void circle()
     {
-        // disable script on ally_fighter
+        // Debug.Log("CIRCLE CALLED");
         gameObject.GetComponent<Boid>().enabled = false;
         gameObject.AddComponent<circle_mothership>();
 

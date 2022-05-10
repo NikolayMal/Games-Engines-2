@@ -10,6 +10,7 @@ public class ally_spawnership : MonoBehaviour
     Vector3 worldTarget;
     Vector3 offset;
     public int Health = 100;
+    private int count = 0;
 
     public void OnEnable() {
         InvokeRepeating("Fighter", 2.0f, 1.0f);
@@ -42,8 +43,8 @@ public class ally_spawnership : MonoBehaviour
 
     void Fighter()
     {
-        int count = 0;
-        if(count < 20) {
+        
+        if(count < 10) {
             Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y - 20, transform.position.z);
             GameObject fighter = Instantiate(ally_fighter, spawnPosition, Quaternion.identity) as GameObject;
             fighter.transform.parent = transform;

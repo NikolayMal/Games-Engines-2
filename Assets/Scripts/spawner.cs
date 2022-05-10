@@ -22,8 +22,8 @@ public class spawner : MonoBehaviour
         sphere.GetComponent<Renderer>().enabled = false;
 
         Instantiate(enemy_spawnership, sphere.transform.position, sphere.transform.rotation);
-        Instantiate(enemy_spawnership, sphere.transform.position + sphere.transform.right * -75, sphere.transform.rotation);
-        Instantiate(enemy_spawnership, sphere.transform.position + sphere.transform.right * 75, sphere.transform.rotation);
+        // Instantiate(enemy_spawnership, sphere.transform.position + sphere.transform.right * -75, sphere.transform.rotation);
+        // Instantiate(enemy_spawnership, sphere.transform.position + sphere.transform.right * 75, sphere.transform.rotation);
 
 
         // enable controller script

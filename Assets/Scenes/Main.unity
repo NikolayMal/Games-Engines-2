@@ -358,3 +358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829b2986455ba354b90a2642d7f6b848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy_spawner_targets1: []
+  ally_fighters: []
+  distance_mothership_planet: 0
