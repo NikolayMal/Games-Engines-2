@@ -506,6 +506,8 @@ GameObject:
   - component: {fileID: 1415898379254075688}
   - component: {fileID: 1303274032984701336}
   - component: {fileID: 3684233834589624377}
+  - component: {fileID: -4741138295826281822}
+  - component: {fileID: 3689759107392473304}
   m_Layer: 0
   m_Name: enemy_spawnership
   m_TagString: enemy_spawner
@@ -630,3 +632,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy_fighter: {fileID: 1504906213338714779, guid: c01b1e928dfd07c49b905109572944c5, type: 3}
   Health: 100
+--- !u!65 &-4741138295826281822
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366741091205099712}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.316219, y: 8.149892, z: 1.4206244}
+  m_Center: {x: 0, y: -0.68100053, z: 0.010573062}
+--- !u!54 &3689759107392473304
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366741091205099712}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

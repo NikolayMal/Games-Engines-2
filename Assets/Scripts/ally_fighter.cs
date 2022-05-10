@@ -7,7 +7,7 @@ public class ally_fighter : MonoBehaviour
     public GameObject ally_fighter_laser;
     public int Health = 50;
 
-    public GameObject[] targets_ally;
+    public GameObject[] targets_enemy;
     public int random_target;
 
     // Start is called before the first frame update
@@ -31,7 +31,7 @@ public class ally_fighter : MonoBehaviour
         }
     }
 
-    void circle()
+    public void circle()
     {
         // disable script on ally_fighter
         gameObject.GetComponent<Boid>().enabled = false;
@@ -41,19 +41,14 @@ public class ally_fighter : MonoBehaviour
 
     void fire_laser()
     {
-        targets_ally = GameObject.FindGameObjectsWithTag("enemy_fighter");
+        targets_enemy = GameObject.FindGameObjectsWithTag("enemy_fighter");
 
-        if (targets_ally.Length == 0) {
-            targets_ally = GameObject.FindGameObjectsWithTag("enemy_spawner");
+        if (targets_enemy.Length == 0) {
+            targets_enemy = GameObject.FindGameObjectsWithTag("enemy_spawner");
         }
 
-        if(targets_ally.Length > 0)
+        if(targets_enemy.Length > 0)
         {
-            random_target = Random.Range(0, targets_ally.Length - 1);
-            Debug.Log(random_target);
-            transform.LookAt(targets_ally[random_target].transform);
-
-            // instantiate laser infront of the fighter
             GameObject laser = Instantiate(ally_fighter_laser, transform.position + transform.forward * 10, transform.rotation);
             // laser.transform.parent = gameObject.transform;
         }

@@ -42,8 +42,14 @@ public class enemy_fighter : MonoBehaviour
             targets = GameObject.FindGameObjectsWithTag("ally_fighter");
         }
         random_target = Random.Range(0, targets.Length - 1);
-        Debug.Log(random_target);
-        transform.LookAt(targets[random_target].transform);
+
+        if (targets.Length == 0)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * 0);
+        }
+        if (targets.Length > 0) {
+            transform.LookAt(targets[random_target].transform);
+        }
     }
 
     void fire_laser()
