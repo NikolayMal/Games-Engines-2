@@ -55,6 +55,7 @@ public class Controller : MonoBehaviour
         if (Vector3.Distance(ally_mothership.transform.position, planet.transform.position) < 300)
         {
             ally_mothership.GetComponent<ally_mothership_move>().enabled = false;
+            ally_mothership.GetComponent<laser_mothership>().enabled = true;
         }
 
     }

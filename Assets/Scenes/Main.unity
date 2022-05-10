@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ally_mothership: {fileID: 6818455679345365778, guid: 3365b601d2f617b4186f9bb1ee440de1, type: 3}
-  planet: {fileID: 7919319199253435486, guid: c7f7db965a1687447839f1cf68261c1b, type: 3}
+  planet: {fileID: 2841292621774933569, guid: c7f7db965a1687447839f1cf68261c1b, type: 3}
   enemy_spawnership: {fileID: 1366741091205099712, guid: 8b5edfa88393d5a4ea05c93c723f6de6, type: 3}
 --- !u!4 &1645004887
 Transform:

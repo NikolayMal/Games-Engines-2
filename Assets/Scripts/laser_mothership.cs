@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class laser_mothership : MonoBehaviour
 {
+    public GameObject laser;
+    private GameObject planet;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        planet = GameObject.FindWithTag("Planet");
+        // Instantiate mothership laser
+        laser = Instantiate(laser, transform.position + transform.forward * 20, transform.rotation) as GameObject;
     }
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {        
+
     }
 }
