@@ -10,6 +10,7 @@ public class Controller : MonoBehaviour
     private GameObject planet;
     private int check_for_fighter_circle = 0;
     private int stop_loop_1 = 0;
+    private int stop_loop_2 = 0;
 
     public float distance_mothership_planet;
 
@@ -21,30 +22,39 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
-        
+        if(enemy_spawner_targets1.Length == 0 && stop_loop_2 == 0)
+        {
+            stop_loop_2 = 1;
+        }
         // Stage 1 : Initial Small Fight : enemy spawns - mothership stops and we wait
-        if (enemy_spawner_targets1.Length == 0 && Vector3.Distance(ally_mothership.transform.position, planet.transform.position) < 900)
+        if (enemy_spawner_targets1.Length == 0 && Vector3.Distance(ally_mothership.transform.position, planet.transform.position) < 900 && stop_loop_2 == 0)
         {
             ally_mothership.GetComponent<ally_mothership_move>().enabled = true;
+
         }
-        if (Vector3.Distance(ally_mothership.transform.position, planet.transform.position) < 900 && check_for_fighter_circle == 0 || check_for_fighter_circle == 1)
+        if (Vector3.Distance(ally_mothership.transform.position, planet.transform.position) < 900 && check_for_fighter_circle == 0)
         {
             ally_mothership.GetComponent<ally_mothership_move>().enabled = false;
         }
-
-        // Stage 2 : Initiate the circling around the mothership
+ 
 
         // Stage 2 : Circling around the mothership and moving towards planet
         if(check_for_fighter_circle == 1 ) 
         {
-            Debug.Log("Ready to go to next stage");
-
+    
             if(stop_loop_1 == 0)
             {
                 Invoke("fighter_to_circle", 5.0f);
+                Invoke("move_mothership", 10.0f);
                 
                 stop_loop_1 = 1;
             }
+        }
+
+        // Stage 3
+        if (Vector3.Distance(ally_mothership.transform.position, planet.transform.position) < 300)
+        {
+            ally_mothership.GetComponent<ally_mothership_move>().enabled = false;
         }
 
     }
@@ -59,8 +69,6 @@ public class Controller : MonoBehaviour
         ally_fighters = GameObject.FindGameObjectsWithTag("ally_fighter");
 
         planet = GameObject.FindGameObjectWithTag("Planet");
-
-
     }
 
     void check_for_enemy_targets_check1()
@@ -83,5 +91,9 @@ public class Controller : MonoBehaviour
             Debug.Log("in for loooooooooooooop");
             ally_fighters[i].GetComponent<ally_fighter>().circle();   
         }
+    }
+
+    void move_mothership() {
+        ally_mothership.GetComponent<ally_mothership_move>().enabled = true;   
     }
 }

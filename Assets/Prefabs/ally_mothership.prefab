@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 475847267365861331}
   - component: {fileID: 2377436520215450633}
   - component: {fileID: -6663195662098823611}
+  - component: {fileID: -4425656787237472230}
   m_Layer: 0
   m_Name: ally_mothership
   m_TagString: ally_mothership
@@ -160,6 +161,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4425656787237472230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818455679345365778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a887f17cfb042c04e84e24f67988c848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7875968633532841456
 GameObject:
   m_ObjectHideFlags: 0
