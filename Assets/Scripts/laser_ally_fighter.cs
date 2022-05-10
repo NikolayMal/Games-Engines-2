@@ -5,18 +5,26 @@ using UnityEngine;
 public class laser_ally_fighter : MonoBehaviour
 {
     private int damage = 10;
-    public GameObject targets_enemy;
+    public GameObject[] targets_enemy;
+    public GameObject[] targets_spawner;
 
     // Start is called before the first frame update
     void Start()
     {
         Invoke("Destroy", 10.0f);
 
-        targets_enemy = GameObject.FindGameObjectWithTag("enemy_fighter");
-        if (targets_enemy == null) {
-            targets_enemy = GameObject.FindGameObjectWithTag("enemy_spawner");
+        targets_enemy = GameObject.FindGameObjectsWithTag("enemy_fighter");
+        if (targets_enemy.Length == 0) {
+            targets_spawner = GameObject.FindGameObjectsWithTag("enemy_spawner");
+            int random = Random.Range(0, targets_enemy.Length);
+            transform.LookAt(targets_spawner[random].transform);
         }
-        transform.LookAt(targets_enemy.transform);
+        int random_number = Random.Range(0, targets_enemy.Length);
+        if(targets_enemy.Length > 0)
+        {
+            transform.LookAt(targets_enemy[random_number].transform);
+        }
+        
     }
 
     // Update is called once per frame
