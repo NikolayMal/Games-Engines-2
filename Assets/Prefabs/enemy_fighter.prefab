@@ -50,7 +50,8 @@ MonoBehaviour:
   targets: []
   random_target: 0
   enemy_fighter_laser: {fileID: 1129071031353249627, guid: 5fc9442b2fb5fff46a1ebd72adee95a9, type: 3}
-  Health: 100
+  Health: 30
+  second_wave_check: 0
 --- !u!54 &5933158230236905205
 Rigidbody:
   m_ObjectHideFlags: 0

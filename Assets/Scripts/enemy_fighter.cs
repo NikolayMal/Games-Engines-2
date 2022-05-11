@@ -7,7 +7,7 @@ public class enemy_fighter : MonoBehaviour
     public GameObject[] targets;
     public int random_target;
     public GameObject enemy_fighter_laser;
-    public int Health = 10;
+    public int Health = 30;
     public int second_wave_check = 0;
 
     void Start()
