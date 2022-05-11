@@ -132,7 +132,6 @@ public class Controller : MonoBehaviour
         {
             ally_fighters[i].GetComponent<ally_fighter>().circle();   
         }
-
     }
 
     void move_mothership() {
