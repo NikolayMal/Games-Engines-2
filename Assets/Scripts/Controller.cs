@@ -17,13 +17,40 @@ public class Controller : MonoBehaviour
     private int check_for_fighter_circle = 0;
     private int stop_loop_1 = 0;
     private int stop_loop_2 = 0;
+    private int stop_loop_3 = 0;
     private float distance_mothership_planet;
+    private GameObject main_camera;
+    private GameObject ship_camera;
+    private GameObject side_camera;
+    private GameObject swarm_camera;
+    private GameObject back_camera;
+    private GameObject circle_camera;
+    private GameObject top_camera;
+
+
     
 
     void Start()
     {
         Invoke("delayed_start", 2.0f);
         InvokeRepeating("check_for_enemy_targets_check1", 5.0f, 5.0f);
+
+
+        main_camera = GameObject.FindGameObjectWithTag("MainCamera");
+        ship_camera = GameObject.FindGameObjectWithTag("ShipCamera");
+        side_camera = GameObject.FindGameObjectWithTag("SideCamera");
+        swarm_camera = GameObject.FindGameObjectWithTag("SwarmCamera");
+        back_camera = GameObject.FindGameObjectWithTag("BackCamera");
+        circle_camera = GameObject.FindGameObjectWithTag("CircleCamera");
+        top_camera = GameObject.FindGameObjectWithTag("TopCamera");
+
+        main_camera.SetActive(false);
+        ship_camera.SetActive(false);
+        side_camera.SetActive(false);
+        swarm_camera.SetActive(false);
+        back_camera.SetActive(true);
+        circle_camera.SetActive(false);
+        top_camera.SetActive(false);
     }
 
     void Update()
@@ -40,6 +67,15 @@ public class Controller : MonoBehaviour
         if (Vector3.Distance(ally_mothership.transform.position, planet.transform.position) < 900 && check_for_fighter_circle == 0)
         {
             ally_mothership.GetComponent<ally_mothership_move>().enabled = false;
+            
+            if(stop_loop_3 == 0){
+                back_camera.SetActive(false);
+                side_camera.SetActive(true);
+
+                Invoke("top_camera_on_1", 6.0f);
+
+                stop_loop_3 = 1;
+            }
         }
 
         // Stage 2 : Circling around the mothership and moving towards planet
@@ -73,7 +109,7 @@ public class Controller : MonoBehaviour
         ally_fighters = GameObject.FindGameObjectsWithTag("ally_fighter");
 
         planet = GameObject.FindGameObjectWithTag("Planet");
-        
+
     }
 
     void check_for_enemy_targets_check1()
@@ -138,5 +174,17 @@ public class Controller : MonoBehaviour
         {
             ally_spawners_2[j].GetComponent<ally_spawnership>().spawn_again();
         }
+    }
+
+    void top_camera_on_1() {
+        top_camera.SetActive(true);
+        side_camera.SetActive(false);
+
+        Invoke("side_camera_on_1", 8.0f);
+    }
+
+    void side_camera_on_1() {
+        side_camera.SetActive(true);
+        top_camera.SetActive(false);
     }
 }

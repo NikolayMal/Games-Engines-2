@@ -19,6 +19,11 @@ TagManager:
   - enemy_spawner2
   - enemy_fighter2
   - SwarmCamera
+  - ShipCamera
+  - SideCamera
+  - BackCamera
+  - CircleCamera
+  - TopCamera
   layers:
   - Default
   - TransparentFX
