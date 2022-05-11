@@ -72,6 +72,8 @@ public class Controller : MonoBehaviour
                 back_camera.SetActive(false);
                 side_camera.SetActive(true);
 
+                Debug.Log("top camera on 1 ");
+
                 Invoke("top_camera_on_1", 6.0f);
 
                 stop_loop_3 = 1;
@@ -123,18 +125,26 @@ public class Controller : MonoBehaviour
         {
             check_for_fighter_circle = 1;
         }
+
     }
 
     void fighter_to_circle()
     {
+        side_camera.SetActive(false);
+        back_camera.SetActive(true);
+
+
         for(int i = 0; i < ally_fighters.Length; i++)
         {
             ally_fighters[i].GetComponent<ally_fighter>().circle();   
         }
+
     }
 
     void move_mothership() {
         ally_mothership.GetComponent<ally_mothership_move>().enabled = true;   
+
+        Invoke("ship_camera_on_1", 8.0f);
     }
 
     void second_wave_enemy_spawn() {
@@ -151,6 +161,9 @@ public class Controller : MonoBehaviour
         Instantiate(enemy_spawnership2, sphere.transform.position + sphere.transform.up * -50 + sphere.transform.right * -50, sphere.transform.rotation);
         Instantiate(enemy_spawnership2, sphere.transform.position + sphere.transform.up * -50 + sphere.transform.right * 50, sphere.transform.rotation);
         InvokeRepeating("check_for_spawner_2", 12.0f, 1.0f);
+
+        Invoke("swarm_camera_on_1", 8.0f);
+
     }
 
     void check_for_spawner_2() {
@@ -186,5 +199,44 @@ public class Controller : MonoBehaviour
     void side_camera_on_1() {
         side_camera.SetActive(true);
         top_camera.SetActive(false);
+
+        Invoke("top_camera_on_2",  8.0f);
+    }
+
+    void top_camera_on_2() {
+        top_camera.SetActive(true);
+        side_camera.SetActive(false);
+    }
+
+    void swarm_camera_on_1() {
+        swarm_camera.SetActive(true);
+        side_camera.SetActive(false);
+        top_camera.SetActive(false);
+
+        Invoke("side_camera_on_2", 13.0f);
+    }
+
+    void side_camera_on_2() {
+        side_camera.SetActive(true);
+        swarm_camera.SetActive(false);
+    }
+
+    void ship_camera_on_1() {
+        ship_camera.SetActive(true);
+        back_camera.SetActive(false);
+
+        Invoke("main_camera_on_1", 5.0f);
+    }
+
+    void main_camera_on_1() {
+        main_camera.SetActive(true);
+        ship_camera.SetActive(false);
+
+        Invoke("ship_camera_on_2", 6.0f);
+    }
+
+    void ship_camera_on_2() {
+        ship_camera.SetActive(true);
+        main_camera.SetActive(false);
     }
 }

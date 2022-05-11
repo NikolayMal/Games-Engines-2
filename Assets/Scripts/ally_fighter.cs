@@ -10,11 +10,13 @@ public class ally_fighter : MonoBehaviour
 
     public GameObject[] targets_enemy;
     public int random_target;
+    private int check_1;
+    private GameObject target;
 
     void Start()
     {
         InvokeRepeating("fire_laser", 1.0f, 5.0f);
-
+        target = GameObject.FindWithTag("Planet");
         transform.position = Vector3.MoveTowards(transform.position, transform.position, Time.deltaTime * 0);
     }
 
@@ -48,4 +50,5 @@ public class ally_fighter : MonoBehaviour
         }
 
     }
+
 }
