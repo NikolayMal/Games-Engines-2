@@ -360,5 +360,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy_spawner_targets1: []
   ally_fighters: []
-  enemy_spawnership: {fileID: 0}
-  distance_mothership_planet: 0
+  enemy_fighters_2: []
+  enemy_spawnership: {fileID: 1366741091205099712, guid: 8b5edfa88393d5a4ea05c93c723f6de6, type: 3}
+  enemy_spawnership2: {fileID: 7652992885727613647, guid: 56d36ebb6e887ac4c9e139ac2f7240c2, type: 3}

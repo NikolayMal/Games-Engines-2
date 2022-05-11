@@ -6,7 +6,6 @@ public class enemy_spawner : MonoBehaviour
 {
     private GameObject ally_mothership;
     public GameObject enemy_fighter;
-
     public int Health = 100;
     private int count = 0;
 
@@ -22,7 +21,7 @@ public class enemy_spawner : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, ally_mothership.transform.position) > 200)
         {
-            transform.position = Vector3.MoveTowards(transform.position, ally_mothership.transform.position, Time.deltaTime * 100);
+            transform.position = Vector3.MoveTowards(transform.position, ally_mothership.transform.position, Time.deltaTime * 30);
         }
 
         if (Health < 0)

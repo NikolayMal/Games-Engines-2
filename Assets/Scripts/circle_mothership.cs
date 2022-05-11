@@ -26,12 +26,12 @@ public class circle_mothership : MonoBehaviour
 
         if (Vector3.Distance(transform.position, ally_cylinder.transform.position) > 50)
         {
-            transform.position = Vector3.MoveTowards(transform.position, circlePosition, Time.deltaTime * 100);
+            transform.position = Vector3.MoveTowards(transform.position, circlePosition, Time.deltaTime * 15);
         }
 
         if (Vector3.Distance(transform.position, ally_cylinder.transform.position) < 50)
         {
-            transform.RotateAround(ally_mothership.transform.position, Vector3.forward, Time.deltaTime * 100);
+            transform.RotateAround(ally_mothership.transform.position, Vector3.forward, Time.deltaTime * 15);
         }
     }
 

@@ -10,7 +10,7 @@ public class ally_spawnership : MonoBehaviour
     Vector3 worldTarget;
     Vector3 offset;
     public int Health = 100;
-    private int count = 0;
+    public int count = 0;
 
     public void OnEnable() {
         InvokeRepeating("Fighter", 2.0f, 4.0f);
@@ -55,6 +55,12 @@ public class ally_spawnership : MonoBehaviour
 
             count++;
         }
+    }
+
+    public void spawn_again()
+    {
+        count = 0;
+        Invoke("Fighter", 0.1f);
     }
 
 }

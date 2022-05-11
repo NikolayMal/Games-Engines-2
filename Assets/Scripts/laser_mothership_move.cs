@@ -12,7 +12,7 @@ public class laser_mothership_move : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.up * Time.deltaTime * 100);        
+        transform.Translate(Vector3.up * Time.deltaTime * 50);        
     }
 
     private void OnTriggerEnter(Collider other)

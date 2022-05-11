@@ -6,7 +6,7 @@ public class ally_mothership_move : MonoBehaviour
 {
 
     private GameObject target;
-    public float speed = 100f;
+    public float speed = 10f;
 
     // Start is called before the first frame update
     void Start()

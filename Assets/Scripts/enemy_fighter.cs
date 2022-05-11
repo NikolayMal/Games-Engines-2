@@ -7,25 +7,30 @@ public class enemy_fighter : MonoBehaviour
     public GameObject[] targets;
     public int random_target;
     public GameObject enemy_fighter_laser;
-
     public int Health = 10;
-    // Start is called before the first frame update
+    public int second_wave_check = 0;
+
     void Start()
     {  
-       InvokeRepeating("find_targets", 1.0f, 20.0f);
+       InvokeRepeating("find_targets", 1.0f, 7.5f);
        InvokeRepeating("fire_laser", 1.0f, 5.0f);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (targets.Length > 0)
+        if (targets.Length > 0 && second_wave_check == 0)
         {
-            if (Vector3.Distance(transform.position, targets[random_target].transform.position) > 40)
+            if (Vector3.Distance(transform.position, targets[random_target].transform.position) > 60)
             {
-               transform.Translate(Vector3.forward * Time.deltaTime * 50);
+               transform.Translate(Vector3.forward * Time.deltaTime * 20);
             }
         }
+
+        if (targets.Length > 0 && second_wave_check == 1)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * 20);
+        }
+        
 
         if (Health <= 0)
         {
@@ -59,5 +64,9 @@ public class enemy_fighter : MonoBehaviour
             GameObject laser = Instantiate(enemy_fighter_laser, transform.position , transform.rotation);
             laser.transform.parent = gameObject.transform;
         }
+    }
+
+    public void second_wave_check_func() {
+        second_wave_check = 1;
     }
 }
