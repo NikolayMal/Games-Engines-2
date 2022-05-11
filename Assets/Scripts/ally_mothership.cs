@@ -30,7 +30,7 @@ public class ally_mothership : MonoBehaviour
         if( check1 == 0) {
             for (int i = 0; i < 10; i++)
             {
-                Vector3 spawnPosition = new Vector3(transform.position.x + Random.Range(-100, 100), transform.position.y + Random.Range(-100, 100), transform.position.z);
+                Vector3 spawnPosition = new Vector3(transform.position.x + Random.Range(-100, 100), transform.position.y + Random.Range(-100, 100), transform.position.z  + Random.Range(-50, 150));
                 GameObject spawnership = Instantiate(ally_spawnership, spawnPosition, transform.rotation) as GameObject;
             }
             check1 = 1;

@@ -42,7 +42,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  ally_fighter: {fileID: 7858035199618752531, guid: aca8afc705fd849418a9bf3089079034, type: 3}
+  ally_fighter: {fileID: 4632732849652884804, guid: aca8afc705fd849418a9bf3089079034, type: 3}
+  Health: 100
 --- !u!1001 &6870997288235347078
 PrefabInstance:
   m_ObjectHideFlags: 0

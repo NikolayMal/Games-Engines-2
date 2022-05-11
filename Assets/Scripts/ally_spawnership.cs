@@ -13,7 +13,7 @@ public class ally_spawnership : MonoBehaviour
     private int count = 0;
 
     public void OnEnable() {
-        InvokeRepeating("Fighter", 2.0f, 1.0f);
+        InvokeRepeating("Fighter", 2.0f, 4.0f);
     }
 
     void Start()

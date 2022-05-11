@@ -36,6 +36,6 @@ public class circle_mothership : MonoBehaviour
     }
 
     void to_location() {
-        circlePosition = new Vector3(ally_cylinder.transform.position.x , ally_cylinder.transform.position.y, ally_cylinder.transform.position.z + Random.Range(-40, 60));        
+        circlePosition = new Vector3(ally_cylinder.transform.position.x , ally_cylinder.transform.position.y, ally_cylinder.transform.position.z + Random.Range(-30, 60));        
     }
 }

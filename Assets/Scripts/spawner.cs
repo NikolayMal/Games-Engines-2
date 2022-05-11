@@ -20,10 +20,11 @@ public class spawner : MonoBehaviour
         sphere.transform.position = target.transform.position;
         sphere.transform.position = sphere.transform.position + sphere.transform.forward * -100 + sphere.transform.up * -20;
         sphere.GetComponent<Renderer>().enabled = false;
+        sphere.tag = "sphere";
 
         Instantiate(enemy_spawnership, sphere.transform.position, sphere.transform.rotation);
-        // Instantiate(enemy_spawnership, sphere.transform.position + sphere.transform.right * -75, sphere.transform.rotation);
-        // Instantiate(enemy_spawnership, sphere.transform.position + sphere.transform.right * 75, sphere.transform.rotation);
+        Instantiate(enemy_spawnership, sphere.transform.position + sphere.transform.right * -75, sphere.transform.rotation);
+        Instantiate(enemy_spawnership, sphere.transform.position + sphere.transform.right * 75, sphere.transform.rotation);
 
 
         // enable controller script

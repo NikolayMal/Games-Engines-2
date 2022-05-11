@@ -7,12 +7,14 @@ public class Controller : MonoBehaviour
     public GameObject[] enemy_spawner_targets1;
     public GameObject[] ally_fighters;
     private GameObject ally_mothership;
+    public GameObject enemy_spawnership;
     private GameObject planet;
+    private GameObject sphere;
     private int check_for_fighter_circle = 0;
     private int stop_loop_1 = 0;
     private int stop_loop_2 = 0;
-
-    public float distance_mothership_planet;
+    private float distance_mothership_planet;
+    
 
     void Start()
     {
@@ -44,6 +46,7 @@ public class Controller : MonoBehaviour
     
             if(stop_loop_1 == 0)
             {
+                Invoke("second_wave_enemy_spawn", 1.0f);
                 Invoke("fighter_to_circle", 5.0f);
                 Invoke("move_mothership", 10.0f);
                 
@@ -57,7 +60,6 @@ public class Controller : MonoBehaviour
             ally_mothership.GetComponent<ally_mothership_move>().enabled = false;
             ally_mothership.GetComponent<laser_mothership>().enabled = true;
         }
-
     }
 
     void delayed_start()
@@ -70,6 +72,7 @@ public class Controller : MonoBehaviour
         ally_fighters = GameObject.FindGameObjectsWithTag("ally_fighter");
 
         planet = GameObject.FindGameObjectWithTag("Planet");
+        
     }
 
     void check_for_enemy_targets_check1()
@@ -89,12 +92,18 @@ public class Controller : MonoBehaviour
     {
         for(int i = 0; i < ally_fighters.Length; i++)
         {
-            Debug.Log("in for loooooooooooooop");
             ally_fighters[i].GetComponent<ally_fighter>().circle();   
         }
     }
 
     void move_mothership() {
         ally_mothership.GetComponent<ally_mothership_move>().enabled = true;   
+    }
+
+    void second_wave_enemy_spawn() {
+        sphere = GameObject.FindGameObjectWithTag("sphere");
+        Instantiate(enemy_spawnership, sphere.transform.position, sphere.transform.rotation);
+        Instantiate(enemy_spawnership, sphere.transform.position + sphere.transform.right * -75, sphere.transform.rotation);
+        Instantiate(enemy_spawnership, sphere.transform.position + sphere.transform.right * 75, sphere.transform.rotation);
     }
 }

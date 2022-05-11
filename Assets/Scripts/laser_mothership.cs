@@ -10,9 +10,8 @@ public class laser_mothership : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        planet = GameObject.FindWithTag("Planet");
-        // Instantiate mothership laser
-        laser = Instantiate(laser, transform.position + transform.forward * 20, transform.rotation) as GameObject;
+        planet = GameObject.FindWithTag("Planet");    
+        laser = Instantiate(laser, transform.position + transform.forward * 50, Quaternion.Euler(90, 90, 90)) as GameObject;
     }
 
     // Update is called once per frame

@@ -8,7 +8,6 @@ public class laser_ally_fighter : MonoBehaviour
     public GameObject[] targets_enemy;
     public GameObject[] targets_spawner;
 
-    // Start is called before the first frame update
     void Start()
     {
         Invoke("Destroy", 10.0f);
@@ -24,13 +23,11 @@ public class laser_ally_fighter : MonoBehaviour
         {
             transform.LookAt(targets_enemy[random_number].transform);
         }
-        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * 100);
+        transform.Translate(Vector3.forward * Time.deltaTime * 50);
     }
 
     void Destroy() {

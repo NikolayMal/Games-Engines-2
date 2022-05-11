@@ -5,16 +5,14 @@ using UnityEngine;
 public class laser_mothership_move : MonoBehaviour
 {
     private GameObject planet;
-    // Start is called before the first frame update
     void Start()
     {
         planet = GameObject.FindWithTag("the_planet");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * 100);
+        transform.Translate(Vector3.up * Time.deltaTime * 100);        
     }
 
     private void OnTriggerEnter(Collider other)
