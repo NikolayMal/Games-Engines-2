@@ -632,6 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy_fighter: {fileID: 1504906213338714779, guid: c01b1e928dfd07c49b905109572944c5, type: 3}
   Health: 100
+  explosion: {fileID: 299942609577288296, guid: 6c67f56603591ee4e8f6dc05f312dad6, type: 3}
 --- !u!65 &-4741138295826281822
 BoxCollider:
   m_ObjectHideFlags: 0

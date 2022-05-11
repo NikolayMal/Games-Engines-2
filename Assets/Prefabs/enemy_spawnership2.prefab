@@ -386,7 +386,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_fighter: {fileID: 1504906213338714779, guid: c01b1e928dfd07c49b905109572944c5, type: 3}
+  enemy_fighter_count: []
   Health: 100
+  explosion: {fileID: 0}
 --- !u!114 &5468003934652594742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,6 +403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy_fighter: {fileID: 1504906213338714779, guid: c01b1e928dfd07c49b905109572944c5, type: 3}
   Health: 100
+  explosion: {fileID: 299942609577288296, guid: 6c67f56603591ee4e8f6dc05f312dad6, type: 3}
 --- !u!65 &5113644319727773869
 BoxCollider:
   m_ObjectHideFlags: 0

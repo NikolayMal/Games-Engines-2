@@ -12,6 +12,7 @@ public class enemy_spawner2 : MonoBehaviour
     public int Health = 100;
     private int count = 0;
     private int maxCount = 8;
+    public GameObject explosion;
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class enemy_spawner2 : MonoBehaviour
         if (Health < 0)
         {
             Debug.Log("Ally Spawner Destroyed!");
+            Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 

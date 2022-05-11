@@ -5,6 +5,7 @@ using UnityEngine;
 public class ally_fighter : MonoBehaviour
 {
     public GameObject ally_fighter_laser;
+    public GameObject explosion;
     public int Health = 50;
 
     public GameObject[] targets_enemy;
@@ -22,6 +23,7 @@ public class ally_fighter : MonoBehaviour
         if (Health <= 0)
         {
             Debug.Log("Ally fighter destroyed!");
+            Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

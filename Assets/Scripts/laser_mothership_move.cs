@@ -5,9 +5,11 @@ using UnityEngine;
 public class laser_mothership_move : MonoBehaviour
 {
     private GameObject planet;
+    public GameObject explosion;
     void Start()
     {
         planet = GameObject.FindWithTag("the_planet");
+        explosion = Resources.Load("Explosion2") as GameObject;
     }
 
     void Update()
@@ -21,6 +23,7 @@ public class laser_mothership_move : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
+            Instantiate(explosion, transform.position, Quaternion.identity);
         }
     }
 }

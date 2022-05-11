@@ -9,6 +9,7 @@ public class enemy_fighter : MonoBehaviour
     public GameObject enemy_fighter_laser;
     public int Health = 30;
     public int second_wave_check = 0;
+    public GameObject explosion;
 
     void Start()
     {  
@@ -35,6 +36,7 @@ public class enemy_fighter : MonoBehaviour
         if (Health <= 0)
         {
             Debug.Log("Enemy fighter Destroyed!");
+            Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

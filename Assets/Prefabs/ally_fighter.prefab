@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ally_fighter_laser: {fileID: 5339165108406585377, guid: 1a18f091a4e93d4479e91f30a650d095, type: 3}
+  explosion: {fileID: 299942609577288296, guid: 6c67f56603591ee4e8f6dc05f312dad6, type: 3}
   Health: 100
   targets_enemy: []
   random_target: 0

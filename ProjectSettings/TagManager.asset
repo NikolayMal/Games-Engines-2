@@ -18,6 +18,7 @@ TagManager:
   - sphere
   - enemy_spawner2
   - enemy_fighter2
+  - SwarmCamera
   layers:
   - Default
   - TransparentFX

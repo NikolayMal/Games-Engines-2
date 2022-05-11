@@ -12,6 +12,7 @@ public class ally_spawnership : MonoBehaviour
     public int Health = 1000;
     public int count = 0;
     public int count2 = 0;
+    public GameObject explosion;
 
     public void OnEnable() {
         InvokeRepeating("Fighter", 2.0f, 4.0f);
@@ -38,6 +39,7 @@ public class ally_spawnership : MonoBehaviour
         if (Health <= 0)
         {
             Debug.Log("Ally Spawner Destroyed!");
+            Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
