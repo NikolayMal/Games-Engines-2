@@ -9,8 +9,6 @@ public class ally_fighter : MonoBehaviour
     public int Health = 50;
 
     public GameObject[] targets_enemy;
-    public int random_target;
-    private int check_1;
     private GameObject target;
 
     void Start()
@@ -48,7 +46,5 @@ public class ally_fighter : MonoBehaviour
         {
             GameObject laser = Instantiate(ally_fighter_laser, transform.position + transform.forward * 10, Quaternion.Euler(90, 90, 90));
         }
-
     }
-
 }

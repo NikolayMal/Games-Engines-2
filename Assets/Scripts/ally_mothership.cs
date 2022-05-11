@@ -6,7 +6,6 @@ public class ally_mothership : MonoBehaviour
 {
     public GameObject ally_spawnership;
     private GameObject target;
-    public float speed = 5f;
     private int check1 = 0;
 
     void Start()

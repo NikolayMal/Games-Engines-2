@@ -24,7 +24,6 @@ public class ally_spawnership : MonoBehaviour
         offset = transform.position - ally_mothership.transform.position;
         offset = Quaternion.Inverse(ally_mothership.transform.rotation) * offset;
 
-
         transform.parent = ally_mothership.transform;
     }
 

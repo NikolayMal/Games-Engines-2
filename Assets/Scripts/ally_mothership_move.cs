@@ -8,14 +8,12 @@ public class ally_mothership_move : MonoBehaviour
     private GameObject target;
     public float speed = 10f;
 
-    // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindWithTag("Planet");
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
