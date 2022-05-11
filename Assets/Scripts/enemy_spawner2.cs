@@ -7,8 +7,11 @@ public class enemy_spawner2 : MonoBehaviour
     private GameObject ally_mothership;
     public GameObject enemy_fighter;
 
+    public GameObject[] enemy_fighter_count;
+
     public int Health = 100;
     private int count = 0;
+    private int maxCount = 8;
 
     void Start()
     {
@@ -25,24 +28,33 @@ public class enemy_spawner2 : MonoBehaviour
             // transform.position = Vector3.MoveTowards(transform.position, ally_mothership.transform.position, Time.deltaTime * 100);
         }
 
+        enemy_fighter_count = GameObject.FindGameObjectsWithTag("enemy_fighter");
+        if (enemy_fighter_count.Length < 60)
+        {
+            count = 0;
+        }
+
         if (Health < 0)
         {
             Debug.Log("Ally Spawner Destroyed!");
             Destroy(gameObject);
         }
+
+
     }
 
     void Fighter()
     {
-        if(count < 5) {
+        if(count < maxCount) {
             Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y - 20, transform.position.z);
             GameObject fighter = Instantiate(enemy_fighter, spawnPosition, Quaternion.identity) as GameObject;
-            fighter.transform.parent = transform;
-            // fighter.AddComponent<NoiseWander>().axis = NoiseWander.Axis.Vertical;
-            // fighter.AddComponent<NoiseWander>().axis = NoiseWander.Axis.Horizontal;
-            // fighter.AddComponent<ObstacleAvoidance>();
-            // fighter.AddComponent<Constrain>();
+            // fighter.transform.parent = transform;
             count++;
         }
+    }
+
+    public void count_reset() {
+        count = 0;
+        maxCount = 50;
     }
 }

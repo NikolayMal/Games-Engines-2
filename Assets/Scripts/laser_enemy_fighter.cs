@@ -9,7 +9,7 @@ public class laser_enemy_fighter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Destroy", 10.0f);
+        Invoke("Destroy", 7.0f);
     }
 
     // Update is called once per frame
@@ -31,10 +31,6 @@ public class laser_enemy_fighter : MonoBehaviour
         if (other.gameObject.tag == "ally_fighter")
         {
             other.gameObject.GetComponent<ally_fighter>().Health -= damage;
-        }
-        if(other.gameObject.tag == "enemy_fighter")
-        {
-            other.gameObject.GetComponent<enemy_fighter>().Health -= damage;
         }
         Destroy(gameObject);
     }

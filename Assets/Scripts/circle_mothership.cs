@@ -24,18 +24,18 @@ public class circle_mothership : MonoBehaviour
     void Update()
     {
 
-        if (Vector3.Distance(transform.position, ally_cylinder.transform.position) > 50)
+        if (Vector3.Distance(transform.position, ally_cylinder.transform.position) > 60)
         {
             transform.position = Vector3.MoveTowards(transform.position, circlePosition, Time.deltaTime * 15);
         }
 
-        if (Vector3.Distance(transform.position, ally_cylinder.transform.position) < 50)
+        if (Vector3.Distance(transform.position, ally_cylinder.transform.position) < 60)
         {
             transform.RotateAround(ally_mothership.transform.position, Vector3.forward, Time.deltaTime * 15);
         }
     }
 
     void to_location() {
-        circlePosition = new Vector3(ally_cylinder.transform.position.x , ally_cylinder.transform.position.y, ally_cylinder.transform.position.z + Random.Range(-30, 60));        
+        circlePosition = new Vector3(ally_cylinder.transform.position.x , ally_cylinder.transform.position.y, ally_cylinder.transform.position.z + Random.Range(-30, 55));        
     }
 }

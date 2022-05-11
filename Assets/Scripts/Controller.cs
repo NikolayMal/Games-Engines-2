@@ -8,6 +8,7 @@ public class Controller : MonoBehaviour
     public GameObject[] ally_fighters;
     public GameObject[] enemy_fighters_2;
     private GameObject[] ally_spawners_2;
+    private GameObject[] enemy_spawners_2;
     private GameObject ally_mothership;
     public GameObject enemy_spawnership;
     public GameObject enemy_spawnership2;
@@ -47,8 +48,8 @@ public class Controller : MonoBehaviour
             if(stop_loop_1 == 0)
             {
                 Invoke("second_wave_enemy_spawn", 1.0f);
-                Invoke("fighter_to_circle", 30.0f);
-                Invoke("move_mothership", 40.0f);
+                Invoke("fighter_to_circle", 45.0f);
+                Invoke("move_mothership", 60.0f);
                 
                 stop_loop_1 = 1;
             }
@@ -101,21 +102,37 @@ public class Controller : MonoBehaviour
     }
 
     void second_wave_enemy_spawn() {
+        Invoke("ally_spawn_2", 1.0f);
+
         sphere = GameObject.FindGameObjectWithTag("sphere");
         Instantiate(enemy_spawnership2, sphere.transform.position, sphere.transform.rotation);
-        Instantiate(enemy_spawnership2, sphere.transform.position + sphere.transform.right * -75, sphere.transform.rotation);
-        Instantiate(enemy_spawnership2, sphere.transform.position + sphere.transform.right * 75, sphere.transform.rotation);
-        InvokeRepeating("check_for_spawner_2", 10.0f, 1.0f);
+        Instantiate(enemy_spawnership2, sphere.transform.position + sphere.transform.right * -50, sphere.transform.rotation);
+        Instantiate(enemy_spawnership2, sphere.transform.position + sphere.transform.right * 50, sphere.transform.rotation);
+        Instantiate(enemy_spawnership2, sphere.transform.position + sphere.transform.up * -50, sphere.transform.rotation);
+        Instantiate(enemy_spawnership2, sphere.transform.position + sphere.transform.up * 50, sphere.transform.rotation);
+        Instantiate(enemy_spawnership2, sphere.transform.position + sphere.transform.up * 50 + sphere.transform.right * -50, sphere.transform.rotation);
+        Instantiate(enemy_spawnership2, sphere.transform.position + sphere.transform.up * 50 + sphere.transform.right * 50, sphere.transform.rotation);
+        Instantiate(enemy_spawnership2, sphere.transform.position + sphere.transform.up * -50 + sphere.transform.right * -50, sphere.transform.rotation);
+        Instantiate(enemy_spawnership2, sphere.transform.position + sphere.transform.up * -50 + sphere.transform.right * 50, sphere.transform.rotation);
+        InvokeRepeating("check_for_spawner_2", 12.0f, 1.0f);
     }
 
     void check_for_spawner_2() {
-
         enemy_fighters_2 = GameObject.FindGameObjectsWithTag("enemy_fighter");
         for(int i = 0; i < enemy_fighters_2.Length; i++)
         {
             enemy_fighters_2[i].GetComponent<enemy_fighter>().second_wave_check_func();
         }
+        
+        enemy_spawners_2 = GameObject.FindGameObjectsWithTag("enemy_spawner");
+        for(int i = 0; i < enemy_spawners_2.Length; i++)
+        {
+            enemy_spawners_2[i].GetComponent<enemy_spawner2>().count_reset();
+        }
 
+    }
+
+    void ally_spawn_2() { 
         ally_spawners_2 = GameObject.FindGameObjectsWithTag("ally_spawner");
         for (int j = 0; j < ally_spawners_2.Length; j++)
         {

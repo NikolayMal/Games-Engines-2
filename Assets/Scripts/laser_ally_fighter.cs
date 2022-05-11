@@ -10,7 +10,7 @@ public class laser_ally_fighter : MonoBehaviour
 
     void Start()
     {
-        Invoke("Destroy", 10.0f);
+        Invoke("Destroy", 7.0f);
 
         targets_enemy = GameObject.FindGameObjectsWithTag("enemy_fighter");
         if (targets_enemy.Length == 0) {

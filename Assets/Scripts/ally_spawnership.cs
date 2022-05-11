@@ -9,8 +9,9 @@ public class ally_spawnership : MonoBehaviour
     public GameObject ally_fighter;
     Vector3 worldTarget;
     Vector3 offset;
-    public int Health = 100;
+    public int Health = 1000;
     public int count = 0;
+    public int count2 = 0;
 
     public void OnEnable() {
         InvokeRepeating("Fighter", 2.0f, 4.0f);
@@ -47,7 +48,7 @@ public class ally_spawnership : MonoBehaviour
         if(count < 10) {
             Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y - 20, transform.position.z);
             GameObject fighter = Instantiate(ally_fighter, spawnPosition, Quaternion.identity) as GameObject;
-            fighter.transform.parent = transform;
+            fighter.transform.parent = ally_mothership.transform;
             fighter.AddComponent<NoiseWander>().axis = NoiseWander.Axis.Vertical;
             fighter.AddComponent<NoiseWander>().axis = NoiseWander.Axis.Horizontal;
             fighter.AddComponent<ObstacleAvoidance>();
@@ -57,10 +58,24 @@ public class ally_spawnership : MonoBehaviour
         }
     }
 
-    public void spawn_again()
+    void Fighter2()
     {
-        count = 0;
-        Invoke("Fighter", 0.1f);
+        
+        if(count2 < 10) {
+            Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y - 20, transform.position.z);
+            GameObject fighter = Instantiate(ally_fighter, spawnPosition, Quaternion.identity) as GameObject;
+            fighter.transform.parent = ally_mothership.transform;
+            fighter.AddComponent<NoiseWander>().axis = NoiseWander.Axis.Vertical;
+            fighter.AddComponent<NoiseWander>().axis = NoiseWander.Axis.Horizontal;
+            fighter.AddComponent<ObstacleAvoidance>();
+            fighter.AddComponent<Constrain>();
+
+            count2++;
+        }
     }
 
+    public void spawn_again()
+    {
+        InvokeRepeating("Fighter2", 0.1f, 1.0f);
+    }
 }
