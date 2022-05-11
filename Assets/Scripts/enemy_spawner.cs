@@ -39,10 +39,6 @@ public class enemy_spawner : MonoBehaviour
             Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y - 20, transform.position.z);
             GameObject fighter = Instantiate(enemy_fighter, spawnPosition, Quaternion.identity) as GameObject;
             fighter.transform.parent = transform;
-            // fighter.AddComponent<NoiseWander>().axis = NoiseWander.Axis.Vertical;
-            // fighter.AddComponent<NoiseWander>().axis = NoiseWander.Axis.Horizontal;
-            // fighter.AddComponent<ObstacleAvoidance>();
-            // fighter.AddComponent<Constrain>();
             count++;
         }
     }

@@ -28,10 +28,8 @@ public class Boid : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + force * 10);
     }
 
-    // Use this for initialization
     void Start()
     {
-
         SteeringBehaviour[] behaviours = GetComponents<SteeringBehaviour>();
 
         foreach (SteeringBehaviour b in behaviours)
@@ -63,7 +61,6 @@ public class Boid : MonoBehaviour
             desired = maxSpeed * (toTarget / distance);
             decelleration = 1;
         }    
-
         return desired - velocity * decelleration;
     }
     
@@ -71,12 +68,6 @@ public class Boid : MonoBehaviour
     Vector3 Calculate()
     {
         force = Vector3.zero;
-
-        // Weighted prioritised truncated running sum
-        // 1. Behaviours are weighted
-        // 2. Behaviours are prioritised
-        // 3. Truncated
-        // 4. Running sum
 
         foreach(SteeringBehaviour b in behaviours)
         {
@@ -91,14 +82,9 @@ public class Boid : MonoBehaviour
                 }
             }
         }
-
-        
-
         return force;
     }
 
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         force = Calculate();

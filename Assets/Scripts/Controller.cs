@@ -25,10 +25,7 @@ public class Controller : MonoBehaviour
     private GameObject swarm_camera;
     private GameObject back_camera;
     private GameObject circle_camera;
-    private GameObject top_camera;
-
-
-    
+    private GameObject top_camera;  
 
     void Start()
     {
@@ -59,7 +56,6 @@ public class Controller : MonoBehaviour
         {
             stop_loop_2 = 1;
         }
-        // Stage 1 : Initial Small Fight : enemy spawns - mothership stops and we wait
         if (enemy_spawner_targets1.Length == 0 && Vector3.Distance(ally_mothership.transform.position, planet.transform.position) < 900 && stop_loop_2 == 0)
         {
             ally_mothership.GetComponent<ally_mothership_move>().enabled = true;
@@ -80,7 +76,6 @@ public class Controller : MonoBehaviour
             }
         }
 
-        // Stage 2 : Circling around the mothership and moving towards planet
         if(check_for_fighter_circle == 1 ) 
         {
             if(stop_loop_1 == 0)
@@ -93,7 +88,6 @@ public class Controller : MonoBehaviour
             }
         }
 
-        // Stage 3
         if (Vector3.Distance(ally_mothership.transform.position, planet.transform.position) < 300)
         {
             ally_mothership.GetComponent<ally_mothership_move>().enabled = false;
@@ -178,7 +172,6 @@ public class Controller : MonoBehaviour
         {
             enemy_spawners_2[i].GetComponent<enemy_spawner2>().count_reset();
         }
-
     }
 
     void ally_spawn_2() { 

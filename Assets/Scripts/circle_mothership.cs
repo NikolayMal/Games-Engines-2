@@ -7,7 +7,6 @@ public class circle_mothership : MonoBehaviour
     private GameObject ally_mothership;
     private GameObject ally_cylinder;
     private GameObject planet;
-
     Vector3 circlePosition;
 
     void Start()
@@ -23,7 +22,6 @@ public class circle_mothership : MonoBehaviour
 
     void Update()
     {
-
         if (Vector3.Distance(transform.position, ally_cylinder.transform.position) > 60)
         {
             transform.position = Vector3.MoveTowards(transform.position, circlePosition, Time.deltaTime * 15);

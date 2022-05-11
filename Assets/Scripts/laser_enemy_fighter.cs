@@ -6,13 +6,11 @@ public class laser_enemy_fighter : MonoBehaviour
 {
     private int damage = 10;
 
-    // Start is called before the first frame update
     void Start()
     {
         Invoke("Destroy", 7.0f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * 100);

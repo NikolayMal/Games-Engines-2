@@ -15,6 +15,5 @@ public class laser_mothership : MonoBehaviour
 
     void Update()
     {        
-
     }
 }

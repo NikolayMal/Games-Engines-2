@@ -8,7 +8,6 @@ public class enemyConstrain: SteeringBehaviour
 {
     private GameObject enemy_spawnership;
     public float radius = 50.0f;
-
     public Vector3 center;
 
     public void OnDrawGizmos()
@@ -23,8 +22,6 @@ public class enemyConstrain: SteeringBehaviour
     public void Start()
     {
         enemy_spawnership = GameObject.FindWithTag("enemy_spawner");
-        // enemy_spawnership = gameobject of parent
-        // enemy_spawnership = enemy_spawnership.transform.parent.gameObject;
         center = enemy_spawnership.transform.position;
     }
 

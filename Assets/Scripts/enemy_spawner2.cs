@@ -24,11 +24,6 @@ public class enemy_spawner2 : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, ally_mothership.transform.position) > 200)
-        {
-            // transform.position = Vector3.MoveTowards(transform.position, ally_mothership.transform.position, Time.deltaTime * 100);
-        }
-
         enemy_fighter_count = GameObject.FindGameObjectsWithTag("enemy_fighter");
         if (enemy_fighter_count.Length < 60)
         {
@@ -50,7 +45,6 @@ public class enemy_spawner2 : MonoBehaviour
         if(count < maxCount) {
             Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y - 20, transform.position.z);
             GameObject fighter = Instantiate(enemy_fighter, spawnPosition, Quaternion.identity) as GameObject;
-            // fighter.transform.parent = transform;
             count++;
         }
     }

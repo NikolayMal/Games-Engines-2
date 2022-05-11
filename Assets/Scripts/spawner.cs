@@ -27,15 +27,11 @@ public class spawner : MonoBehaviour
         Instantiate(enemy_spawnership, sphere.transform.position + sphere.transform.right * 75, sphere.transform.rotation);
 
 
-        // enable controller script
         ally_mothership = GameObject.FindWithTag("ally_mothership");
         ally_mothership.GetComponent<ally_mothership_move>().enabled = false;
-        
-        
     }
 
     void Update()
     {        
-        
     }
 }
